@@ -21,7 +21,6 @@ contract V1_FixedVault {
         _locked = 1;
     }
 
-
     function deposit() external payable {
         if (msg.value == 0) revert Errors.ZeroAmount();
         balanceOf[msg.sender] += msg.value;
@@ -37,7 +36,7 @@ contract V1_FixedVault {
         balanceOf[msg.sender] = bal - amount;
 
         // Interaction last
-        (bool ok, ) = msg.sender.call{value: amount}("");
+        (bool ok,) = msg.sender.call{value: amount}("");
         if (!ok) revert Errors.EthTransferFailed();
 
         emit Withdrawn(msg.sender, amount);

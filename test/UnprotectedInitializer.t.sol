@@ -25,7 +25,7 @@ contract UnprotectedInitializerTest is Test {
 
         // Someone funds it (this happens a lot: implementation receives ETH/tokens by mistake)
         vm.prank(victimUser);
-        (bool ok, ) = address(impl).call{value: 5 ether}("");
+        (bool ok,) = address(impl).call{value: 5 ether}("");
         assertTrue(ok);
         assertEq(address(impl).balance, 5 ether);
 
@@ -43,7 +43,7 @@ contract UnprotectedInitializerTest is Test {
         V1_FixedInitializer impl = new V1_FixedInitializer();
 
         vm.prank(victimUser);
-        (bool ok, ) = address(impl).call{value: 5 ether}("");
+        (bool ok,) = address(impl).call{value: 5 ether}("");
         assertTrue(ok);
         assertEq(address(impl).balance, 5 ether);
 

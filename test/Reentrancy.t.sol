@@ -3,7 +3,6 @@ pragma solidity ^0.8.20;
 
 import {Test} from "forge-std/Test.sol";
 
-
 import {V1_VulnerableVault} from "../src/reentrancy/V1_VulnerableVault.sol";
 import {V1_FixedVault} from "../src/reentrancy/V1_FixedVault.sol";
 import {V1_Attacker} from "../src/reentrancy/V1_Attacker.sol";
@@ -13,7 +12,7 @@ contract ReentrancyTest is Test {
     V1_FixedVault internal fixedVault;
 
     address internal alice = address(0xA11CE);
-    address internal bob   = address(0xB0B);
+    address internal bob = address(0xB0B);
 
     function setUp() public {
         vuln = new V1_VulnerableVault();

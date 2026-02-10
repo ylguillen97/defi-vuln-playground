@@ -9,7 +9,7 @@ import {V1_Griefer} from "../src/dos-and-griefing/V1_Griefer.sol";
 
 contract PushPaymentsDoSTest is Test {
     address internal alice = address(0xA11CE);
-    address internal bob   = address(0xB0B);
+    address internal bob = address(0xB0B);
 
     function setUp() public {
         vm.deal(alice, 0);
@@ -21,7 +21,6 @@ contract PushPaymentsDoSTest is Test {
         V1_Griefer griefer = new V1_Griefer();
 
         vm.deal(address(dist), 3 ether);
-
 
         address[] memory recipients = new address[](3);
         recipients[0] = alice;

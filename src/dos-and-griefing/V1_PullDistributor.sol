@@ -39,7 +39,7 @@ contract V1_PullDistributor {
         claimable[msg.sender] = 0;
 
         // Interaction last
-        (bool ok, ) = payable(msg.sender).call{value: amount}("");
+        (bool ok,) = payable(msg.sender).call{value: amount}("");
         require(ok, "PAYMENT_FAILED");
 
         emit Claimed(msg.sender, amount);

@@ -9,7 +9,7 @@ import {V1_FixedFeeOnTransferVault} from "../src/token-integration/V1_FixedFeeOn
 
 contract FeeOnTransferTest is Test {
     address internal alice = address(0xA11CE);
-    address internal bob   = address(0xB0B);
+    address internal bob = address(0xB0B);
 
     ERC20FeeOnTransferMock internal token;
 

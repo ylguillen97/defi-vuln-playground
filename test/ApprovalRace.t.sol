@@ -67,5 +67,4 @@ contract ApprovalRaceTest is Test {
         assertEq(token.balanceOf(thief), 110 ether);
         assertEq(token.balanceOf(alice), 90 ether);
     }
-
 }

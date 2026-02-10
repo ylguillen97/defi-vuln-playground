@@ -9,7 +9,6 @@ import {V1_SpotPriceAMM} from "../src/oracle-manipulation/V1_SpotPriceAMM.sol";
 import {V1_VulnerableLending} from "../src/oracle-manipulation/V1_VulnerableLending.sol";
 import {V1_FixedLending} from "../src/oracle-manipulation/V1_FixedLending.sol";
 
-
 contract OracleManipulationTest is Test {
     ERC20Mock internal col;
     ERC20Mock internal debt;

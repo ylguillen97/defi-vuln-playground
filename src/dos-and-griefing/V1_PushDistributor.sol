@@ -26,7 +26,7 @@ contract V1_PushDistributor {
 
         for (uint256 i = 0; i < recipients.length; i++) {
             // If any recipient reverts, the entire tx reverts => DoS.
-            (bool ok, ) = payable(recipients[i]).call{value: amountEach}("");
+            (bool ok,) = payable(recipients[i]).call{value: amountEach}("");
             require(ok, "PAYMENT_FAILED");
         }
 

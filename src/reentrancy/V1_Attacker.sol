@@ -50,7 +50,7 @@ contract V1_Attacker {
 
     function sweep(address payable to) external returns (bool success) {
         require(msg.sender == OWNER, "not owner");
-        (success, ) = to.call{value: address(this).balance}("");
+        (success,) = to.call{value: address(this).balance}("");
         return success;
     }
 }

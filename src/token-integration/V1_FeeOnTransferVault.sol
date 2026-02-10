@@ -41,7 +41,7 @@ contract V1_FeeOnTransferVault {
         emit Deposited(msg.sender, amount);
     }
 
-    function withdraw(uint256 amount) external  nonReentrant(){
+    function withdraw(uint256 amount) external nonReentrant {
         if (amount == 0) revert Errors.ZeroAmount();
 
         uint256 bal = balanceOf[msg.sender];

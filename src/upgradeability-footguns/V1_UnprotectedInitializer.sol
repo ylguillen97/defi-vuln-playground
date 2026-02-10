@@ -25,7 +25,7 @@ contract V1_UnprotectedInitializer {
     function sweep(address payable to) external {
         if (msg.sender != owner) revert Errors.Unauthorized();
         uint256 amount = address(this).balance;
-        (bool ok, ) = to.call{value: amount}("");
+        (bool ok,) = to.call{value: amount}("");
         require(ok, "ETH_SEND_FAIL");
         emit Swept(to, amount);
     }

@@ -21,7 +21,7 @@ contract TxOriginTest is Test {
         vm.startPrank(owner, owner);
         V1_TxOriginAuth wallet = new V1_TxOriginAuth(owner);
 
-        (bool ok, ) = address(wallet).call{value: 5 ether}("");
+        (bool ok,) = address(wallet).call{value: 5 ether}("");
         assertTrue(ok);
         assertEq(address(wallet).balance, 5 ether);
 
@@ -34,7 +34,6 @@ contract TxOriginTest is Test {
         assertEq(thief.balance, 5 ether);
     }
 
-
     function test_fix_msg_sender_auth_blocks_phishing() public {
         // Deploy fixed wallet
         vm.prank(owner);
@@ -42,7 +41,7 @@ contract TxOriginTest is Test {
 
         // Fund wallet
         vm.prank(owner);
-        (bool ok, ) = address(wallet).call{value: 5 ether}("");
+        (bool ok,) = address(wallet).call{value: 5 ether}("");
         assertTrue(ok);
         assertEq(address(wallet).balance, 5 ether);
 

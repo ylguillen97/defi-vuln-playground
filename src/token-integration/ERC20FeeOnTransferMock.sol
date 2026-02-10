@@ -8,11 +8,7 @@ import {ERC20Mock} from "../common/ERC20Mock.sol";
 contract ERC20FeeOnTransferMock is ERC20Mock {
     uint256 public immutable FEE_BPS;
 
-    constructor(
-        string memory name_,
-        string memory symbol_,
-        uint256 feeBps_
-    ) ERC20Mock(name_, symbol_) {
+    constructor(string memory name_, string memory symbol_, uint256 feeBps_) ERC20Mock(name_, symbol_) {
         require(feeBps_ <= 2000, "fee too high"); // keep it sane
         FEE_BPS = feeBps_;
     }

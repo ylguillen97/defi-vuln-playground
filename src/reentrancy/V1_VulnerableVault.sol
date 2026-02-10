@@ -24,7 +24,7 @@ contract V1_VulnerableVault {
         if (bal < amount) revert Errors.InsufficientBalance(bal, amount);
 
         // VULNERABLE: interaction before effects (reentrancy window)
-        (bool ok, ) = msg.sender.call{value: amount}("");
+        (bool ok,) = msg.sender.call{value: amount}("");
         if (!ok) revert Errors.EthTransferFailed();
 
         // Effects happen too late
